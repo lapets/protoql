@@ -1,0 +1,28 @@
+{
+  "name": "protoql",
+  "version": "0.0.1",
+  "author": {
+    "name": "Andrei Lapets",
+    "email": "lapets@gmail.com"
+  },
+  "description": "Embedded language for rapid assembly, querying, and interactive visual rendering of common, abstract mathematical structures.",
+  "homepage": "http://protoql.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lapets/protoql"
+  },
+  "bugs": {
+    "url": "https://github.com/lapets/protoql/issues"
+  },
+  "keywords": [
+    "mathematical",
+    "graph",
+    "rendering"
+  ],
+  "license": "",
+  "readmeFilename": "README.md",
+  "main": "lib/protoql.js",
+  "dependencies": {},
+  "analyze": false,
+  "preferGlobal": false
+}
