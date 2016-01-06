@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "author": {
     "name": "Andrei Lapets",
-    "email": "lapets@gmail.com"
+    "email": "a@lapets.io"
   },
-  "description": "Embedded language for rapid assembly, querying, and interactive visual rendering of common, abstract mathematical structures.",
+  "description": "Embedded language for rapid assembly, querying, and interactive visual rendering of diagrams and common, abstract mathematical structures.",
   "homepage": "http://protoql.org",
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
     "url": "https://github.com/lapets/protoql/issues"
   },
   "keywords": [
+    "diagram",
     "mathematical",
     "graph",
     "rendering"
