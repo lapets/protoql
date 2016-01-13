@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="all" name="robots" />
+    <title>protoql</title>
+    <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,"><!-- Suppress browser favicon.ico request. -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+html, body { height:100%; margin:0; color:#000000; font-family:'Open Sans',sans-serif; }
+body #content { z-index:100; min-height:100%; width:900px; margin:0 auto -90px; }
+body #content #title { padding-top:60px; padding-bottom:15px; /*text-align:center;*/ color:#326B9A; font-family:'Open Sans',sans-serif; font-size:36px; }
+body #content #title img { height:35px; }
+body #content #description { padding-bottom:40px; font-size:16px; }D81C1C
+body #content #sheet { margin:0 auto; padding-bottom:40px; color:#000000; background-color:white; }
+body #content #sheet .section { padding-top:20px; font-family:'Open Sans',sans-serif; font-size:16px; }
+body #content #sheet .section h2 { color:#A8A8A8; font-family:'Open Sans',sans-serif; font-weight:normal; font-size:28px; }
+body #content #sheet .section ul { list-style:none; padding:8px 0px 8px 0px; margin:0; }
+body #content #sheet .section li { padding-left:1.5em; text-indent:-1em; }
+body #content #sheet .section li:before { content:"4"; color:#888888; font-family:'Webdings'; }
+body #content #sheet .section a { color:#F3A831; text-decoration:none; }
+body #content #sheet .section a:hover { text-decoration:underline; }
+body #content #footer_spacer { height:70px; }
+body #footer { width:900px; height:70px; margin:0 auto; padding-top:15px; font-family:'Open Sans',sans-serif; font-size:13px; }
+body #footer hr { border:0px; border-top:1px solid #DFDFDF; }
+body #footer a { color:#F3A831; text-decoration:none; }
+body #footer a:hover { text-decoration:underline; }
+    </style>
+    <script>
+      var favIcon = "AAABAAEAICAAAAEACACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOgAAADrAAAA7AAAAO8ABATlABAQ4gAcHOEAKSneADg42wBISNkAbm7TAIOD0ACZmc8AB6z/AAus/wAXq/8AH6z/ACes/wCwsMwAPa/3AEuy8QBZs+0AebrhAIu93QCewdcAs8XQAMnJyQDPz88A09PTANnZ2QDe3t4A4uLiAOnp6QDv7+8A8PDwAPT09AD39/cA+/v7AP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmHiMmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYjHiYmJh4ECCMmJiYmJiYmJiYmJiYmJiYmJiYmJiYmIxQQHiYmHgQIIyYmJiYmJiYmJiYmJiYmJiYmJiYmJiYjFBAeJiYeBAgjJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiMUEB4mJh4ECCMmJiYmJiYmJiYmJiYmJiYmJiYmJiYmIxQQHiYmHgQIIyYmJiYmJiYmJiYmJiYmJiYmJiYmJiYjFBAeJiYeBAgjIhsLCgobISYmJiYmJiYmIhsXFhcbIiMUEB4mJh4ECB0IAgMDAwIHEiQmJiYmJR0UDg0NDQ4UHRQQHiYmHgQHAAIIDBoSCQEBCyQmJiYZDw4VGRoYFQ4PExAeJiYeBAMBDCImJiYkEgUBEiYmHxEPGSImJiYiGQ8NEB4mJh4EAwskJiYmJiYmEgEIIyYWDRclJiYmJiYlFw0QHiYmHgQAHSYmJiYmJiYhBwAdIRMQHiYmJiYmJiYeEBAeJiYeBAgjJiYmJiYmJiYKAxoeEBQjJiYmJiYmJiMUEB4mJh4ECCMmJiYmJiYmJgoDGh4QFCMmJiYmJiYmIxQQHiYmIQcEHiYmJiYmJiYjCAAdIRMQHiYmJiYmJiYeEBMhJiYmCwMLJSYmJiYmJhIBCCMmFg0XJSYmJiYmJRcNFiYmJiYgBgASIiYmJiQSBgESJiYfEQ8ZIiYmJiIZDxEfJiYmJiYSBAIIDBoSCQEBCyQmJiYZDw4VGRoYFQ4PGSYmJiYmJiYeCAEDAwMCBhIkJiYmJiUdFA4NDQ0OFB0lJiYmJiYmJiYjHAsKChsgJiYmJiYmJiYiGxcWFxsiJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      var docHead = document.getElementsByTagName('head')[0];
+      var newLink = document.createElement('link');
+      newLink.rel = 'shortcut icon';
+      newLink.type = 'image/x-icon';
+      newLink.href = 'data:image/png;base64,'+favIcon;
+      docHead.appendChild(newLink);
+    </script>
+    <base target="_parent">
+  </head>
+  <body>
+    <div id="content">
+      <div id="title"><img src="protoql.png"/></div>
+      <div id="description">
+        A JavaScript library designed for rapid assembly, querying, and interactive visual rendering of diagrams and common abstract mathematical structures.
+      </div>
+      <div id="sheet">
+        <div class="section">
+          <h2>Repository</h2>
+            The <a href="http://github.com/lapets/protoql">official repository</a> is maintained on GitHub.
+        </div>
+      </div><!-- /#sheet -->
+      <div id="footer_spacer"></div>
+    </div><!-- /#content -->
+    <div id="footer">
+      <hr/>
+      <a href="http://www.github.com/lapets/protoql">Repository</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="mailto:a@lapets.io">Contact</a>
+    </div><!-- /#footer -->
+  </body>
+</html>
