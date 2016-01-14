@@ -3,9 +3,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="../lib/protoql.js"></script>
   </head>
-  <body onload="var pql = protoql.Visualization('example');">
-    <div id="example"></div>
+  <body onload="protoql.Visualizations($('.pql'));">
+    <div class="pql"></div>
+    <div class="pql"></div>
   </body>
 </html>
