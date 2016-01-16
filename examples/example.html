@@ -8,7 +8,33 @@
     <style>.pql { width:600px; height:400px; }</style>
   </head>
   <body onload="protoql.Visualizations($('.pql'));">
-    <div class="pql"></div>
-    <div class="pql"></div>
+    <div class="pql">
+inp = {
+    nodes: [
+        [["lorem`ipsum`dolor`sit amet"], ("consectetur`adipiscing`elit"), ["sed do`eiusmod tempor"],       null],
+        [null,                           ["incididunt`ut labore"],        null,                            ("a")],
+        [("lorem`ipsum`dolor`sit amet"), ("incididunt`ut labore"),        ["consectetur`adipiscing`elit"], ["b"]]
+      ],
+    links: [
+        [[0,0],[0,0]], [[0,0],[0,1]], [[0,1],[0,2]],
+        [[0,2],[1,1]], [[1,1],[1,3]], [[1,3],[2,0]],
+        [[2,0],[2,1]], [[2,1],[2,2]], [[2,2],[2,3]]
+      ]
+  }
+    </div>
+    <div class="pql">
+inp = {
+    nodes: [
+        [["lorem`ipsum`dolor`sit amet"], ("consectetur`adipiscing`elit"), ["sed do`eiusmod tempor"],       null],
+        [null,                           ["incididunt`ut labore"],        null,                            ("a")],
+        [("lorem`ipsum`dolor`sit amet"), ("incididunt`ut labore"),        ["consectetur`adipiscing`elit"], ["b"]]
+      ],
+    links: [
+        [[0,0],[0,0]], [[0,0],[0,1]], [[0,1],[0,2]],
+        [[0,2],[1,1]], [[1,1],[1,3]], [[1,3],[2,0]],
+        [[2,0],[2,1]], [[2,1],[2,2]], [[2,2],[2,3]]
+      ]
+  }
+    </div>
   </body>
 </html>
