@@ -5,7 +5,10 @@
     <meta content="all" name="robots" />
     <title>protoql</title>
     <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,"><!-- Suppress browser favicon.ico request. -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/vs.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <style>
 html, body { height:100%; margin:0; color:#000000; font-family:'Open Sans',sans-serif; }
 body #content { z-index:100; min-height:100%; width:900px; margin:0 auto -90px; }
@@ -14,6 +17,8 @@ body #content #title img { height:35px; }
 body #content #description { padding-bottom:40px; font-size:16px; }D81C1C
 body #content #sheet { margin:0 auto; padding-bottom:40px; color:#000000; background-color:white; }
 body #content #sheet .section { padding-top:20px; font-family:'Open Sans',sans-serif; font-size:16px; }
+body #content #sheet .section pre code { padding:10px; font-size:14px; }
+body #content #sheet .section code { background-color:#F1F1F1; }
 body #content #sheet .section h2 { color:#A8A8A8; font-family:'Open Sans',sans-serif; font-weight:normal; font-size:28px; }
 body #content #sheet .section ul { list-style:none; padding:8px 0px 8px 0px; margin:0; }
 body #content #sheet .section li { padding-left:1.5em; text-indent:-1em; }
@@ -34,25 +39,53 @@ body #footer a:hover { text-decoration:underline; }
       newLink.type = 'image/x-icon';
       newLink.href = 'data:image/png;base64,'+favIcon;
       docHead.appendChild(newLink);
+      hljs.initHighlightingOnLoad();
     </script>
     <base target="_parent">
   </head>
-  <body>
+  <body onload="$('code').each(function(){ $(this).html(($(this).html().trim()));});">
     <div id="content">
       <div id="title"><img src="protoql.png"/></div>
       <div id="description">
         A JavaScript library designed for rapid assembly, querying, and interactive visual rendering of diagrams and common abstract mathematical structures.
       </div>
       <div id="sheet">
-        <div class="section">
-          <h2>Repository</h2>
-            The <a href="http://github.com/lapets/protoql">official repository</a> is maintained on GitHub.
+        <div class="section"><h2>Purpose</h2>
+          This library makes it possible to easily introduce specific kinds of interactive graph diagrams into HTML documents. It depends primarily on <a href="http://d3js.org/">D3.js</a>; it also supports initialization of <a href="http://jquery.com">jQuery</a>-wrapped document elements as interactive diagrams.
+        </div>
+        <div class="section"><h2>Repository and Package</h2>
+          The <a href="http://github.com/lapets/protoql">official repository</a> is maintained on GitHub. The package is also <a href="http://www.npmjs.com/package/protoql">available on npm</a>.
+          <pre><code>
+npm install protoql
+          </code></pre>
+          The latest version of the library is also hosted at <a href="http://protoql.org/protoql.js"><code>http://protoql.org/protoql.js</code></a>, although we recommend maintaining a copy on your own server at this time.
+        </div>
+        <div class="section"><h2>Example</h2>
+          Using the library is straightforward. Simply include a graph description in document elements, and then apply the visualization constructor to those elements.
+          <pre><code class="html">
+&lt;head&gt;
+  &lt;script src="//d3js.org/d3.v3.min.js">&lt;/script&gt;
+  &lt;script src="//code.jquery.com/jquery-2.2.0.min.js">&lt;/script&gt;
+  &lt;script src="//protoql.org/protoql.js">&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="protoql.Visualizations($('.pql'));"&gt;
+  &lt;div class="pql"&gt;
+[
+  [["dd`r``lorem ipsum`sit amet"], ("s`r``consectetur"), ["dl``sed do`eiusmod"]],
+  [null, ["dl``incididunt`ut labore"], null],
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``ut labore"), ["consectetur`elit"]]
+]
+  &lt;/div&gt;
+&lt;/body&gt;
+          </code></pre>
         </div>
       </div><!-- /#sheet -->
       <div id="footer_spacer"></div>
     </div><!-- /#content -->
     <div id="footer">
       <hr/>
+      <a href="http://www.npmjs.com/package/protoql">Package</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
       <a href="http://www.github.com/lapets/protoql">Repository</a>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <a href="mailto:a@lapets.io">Contact</a>
