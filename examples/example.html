@@ -9,32 +9,18 @@
   </head>
   <body onload="protoql.Visualizations($('.pql'));">
     <div class="pql">
-inp = {
-    nodes: [
-        [["lorem`ipsum`dolor`sit amet"], ("consectetur`adipiscing`elit"), ["sed do`eiusmod tempor"],       null],
-        [null,                           ["incididunt`ut labore"],        null,                            ("a")],
-        [("lorem`ipsum`dolor`sit amet"), ("incididunt`ut labore"),        ["consectetur`adipiscing`elit"], ["b"]]
-      ],
-    links: [
-        [[0,0],[0,0]], [[0,0],[0,1]], [[0,1],[0,2]],
-        [[0,2],[1,1]], [[1,1],[1,3]], [[1,3],[2,0]],
-        [[2,0],[2,1]], [[2,1],[2,2]], [[2,2],[2,3]]
-      ]
-  }
+[
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"],       null],
+  [null,                           ["rr``incididunt`ut labore"],        null,                            ("dlll``a")],
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"),        ["r``consectetur`adipiscing`elit"], ["b"]]
+]
     </div>
     <div class="pql">
-inp = {
-    nodes: [
-        [["lorem`ipsum`dolor`sit amet"], ("consectetur`adipiscing`elit"), ["sed do`eiusmod tempor"],       null],
-        [null,                           ["incididunt`ut labore"],        null,                            ("a")],
-        [("lorem`ipsum`dolor`sit amet"), ("incididunt`ut labore"),        ["consectetur`adipiscing`elit"], ["b"]]
-      ],
-    links: [
-        [[0,0],[0,0]], [[0,0],[0,1]], [[0,1],[0,2]],
-        [[0,2],[1,1]], [[1,1],[1,3]], [[1,3],[2,0]],
-        [[2,0],[2,1]], [[2,1],[2,2]], [[2,2],[2,3]]
-      ]
-  }
+[
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
+  [null, ["dl``incididunt`ut labore"], null],
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
+]
     </div>
   </body>
 </html>

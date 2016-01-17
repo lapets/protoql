@@ -20,7 +20,7 @@
     "graph",
     "rendering"
   ],
-  "license": "",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "main": "lib/protoql.js",
   "dependencies": {},
