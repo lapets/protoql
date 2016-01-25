@@ -15,12 +15,18 @@
   [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"),        ["r``consectetur`adipiscing`elit"], ["b"]]
 ]
     </div>
-    <div class="pql">
+<!--    <div class="pql">
 [
   [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
   [null, ["dl``incididunt`ut labore"], null],
   [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
 ]
+    </div>-->
+    <div class="pql">
+relation({'a','b','c'}, {('a','b'),('b','c'),('a','a'),('c','b')})
+    </div>
+    <div class="pql">
+graph({'a','b','c'}, {('a','b'),('b','c'),('a','a'),('c','b')})
     </div>
   </body>
 </html>
