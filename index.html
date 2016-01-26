@@ -9,6 +9,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="lib/protoql.js"></script>
     <style>
 html, body { height:100%; margin:0; color:#000000; font-family:'Open Sans',sans-serif; }
 body #content { z-index:100; min-height:100%; width:900px; margin:0 auto -90px; }
@@ -25,6 +27,7 @@ body #content #sheet .section li { padding-left:1.5em; text-indent:-1em; }
 body #content #sheet .section li:before { content:"4"; color:#888888; font-family:'Webdings'; }
 body #content #sheet .section a { color:#F3A831; text-decoration:none; }
 body #content #sheet .section a:hover { text-decoration:underline; }
+body #content #sheet .section .pql { height:400px; width:500px; margin:0 auto; margin-top:15px; margin-bottom:15px; display:block; border:1px solid #AFAFAF; }
 body #content #footer_spacer { height:70px; }
 body #footer { width:900px; height:70px; margin:0 auto; padding-top:15px; font-family:'Open Sans',sans-serif; font-size:13px; }
 body #footer hr { border:0px; border-top:1px solid #DFDFDF; }
@@ -43,7 +46,7 @@ body #footer a:hover { text-decoration:underline; }
     </script>
     <base target="_parent">
   </head>
-  <body onload="$('code').each(function(){ $(this).html(($(this).html().trim()));});">
+  <body onload="$('code').each(function(){ $(this).html(($(this).html().trim()));}); protoql.Visualizations($('.pql'));">
     <div id="content">
       <div id="title"><img src="protoql.png"/></div>
       <div id="description">
@@ -58,26 +61,69 @@ body #footer a:hover { text-decoration:underline; }
           <pre><code>
 npm install protoql
           </code></pre>
-          The latest version of the library is also hosted at <a href="http://protoql.org/protoql.js"><code>http://protoql.org/protoql.js</code></a>, although we recommend maintaining a copy on your own server at this time.
+          The latest version of the library is also hosted at <a href="http://protoql.org/lib/protoql.js"><code>http://protoql.org/lib/protoql.js</code></a>, although we recommend maintaining a copy on your own server at this time.
         </div>
         <div class="section"><h2>Example</h2>
-          Using the library is straightforward. Simply include a graph description in document elements, and then apply the visualization constructor to those elements.
+          Using the library is straightforward. Simply include a diagram description in document elements, and then apply the visualization constructor to those elements.
           <pre><code class="html">
 &lt;head&gt;
   &lt;script src="//d3js.org/d3.v3.min.js">&lt;/script&gt;
   &lt;script src="//code.jquery.com/jquery-2.2.0.min.js">&lt;/script&gt;
-  &lt;script src="//protoql.org/protoql.js">&lt;/script&gt;
+  &lt;script src="//protoql.org/lib/protoql.js">&lt;/script&gt;
 &lt;/head&gt;
 &lt;body onload="protoql.Visualizations($('.pql'));"&gt;
   &lt;div class="pql"&gt;
-[
-  [["dd`r``lorem ipsum`sit amet"], ("s`r``consectetur"), ["dl``sed do`eiusmod"]],
+table([
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
   [null, ["dl``incididunt`ut labore"], null],
-  [("r``lorem`ipsum`dolor`sit amet"), ("r``ut labore"), ["consectetur`elit"]]
-]
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
+])
   &lt;/div&gt;
 &lt;/body&gt;
           </code></pre>
+          The diagram above would render as shown below. 
+          <div class="pql">
+table([
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
+  [null, ["dl``incididunt`ut labore"], null],
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
+])
+          </div>
+          The notation for tables being used above (inspired by the LaTeX <a href="https://tug.org/applications/Xy-pic/Xy-pic.html">xy</a> package) is as follows:
+          <ul>
+            <li>all nodes are strings describing the edges originating at that node and the node label, where:
+              <ul>
+                <li>each individual arrow description string is of the form <code>ddll</code> (this is an example) and indicate the direction the arrow travel in the grid (e.g., <code>d</code> for "down"),</li>
+                <li>the individual arrow strings are separated using a backquote character (i.e., <code>`</code>),</li>
+                <li>the arrow descriptions and the label are separated using a double backquote (i.e., <code>``</code>),</li>
+                <li>the backquote character is also the newline separator for the label string, and</li>
+                <li>circular nodes are delimited using <code>(</code>...<code>)</code>, rectangular nodes are delimited using <code>[</code>...<code>]</code>, and empty space is denoted using <code>null</code>;</li>
+              </ul>
+            </li>
+            <li>each row is represented using a list of node entries;</li>
+            <li>the table is represented as a list of rows.</li>
+          </ul>
+          Supported diagram notations include <code>table</code>, <code>relation</code>, and <code>graph</code>. For example, the following will create a diagram with a small graph containing five nodes and three edges.
+          <pre><code class="html">
+relation({'a','b','c'}, {'x','y'}, {('a','x'),('b','y'),('a','y')})
+          </code></pre>
+          <div class="pql" style="height:200px; width:300px;">
+relation({'a','b','c'}, {'x','y'}, {('a','x'),('b','y'),('a','y')})
+          </div>
+          When using <code>relation</code>, it is possible to supply one set or two sets before supplying the edge set. In either case, two sets will be arranged side-by-side (two copies of the same set, or the two distinct sets, going from left to right), and the edges will be added between the two sets. When using <code>graph</code>, the nodes will be arranged from top to bottom, left to right as they are listed (roughly accommodating the dimensions of the diagram).
+          <pre><code class="html">
+graph({'a','b','c','d','e'}, {('a','b'),('b','c'),('a','a'),('c','b')})
+          </code></pre>
+          <div class="pql" style="height:200px; width:300px;">
+graph({'a','b','c','d','e'}, {('a','b'),('b','c'),('a','a'),('c','b')})
+          </div>
+          The set is optional in both <code>relation</code> and <code>graph</code> diagrams (if it is not supplied, it will be derived from the edge set). Adding the <code>!</code> decorator fixes the diagram (zooming, panning, and dragging are disabled); this works for all three diagram types.
+          <pre><code class="html">
+!graph({('a','b'),('b','c'),('a','a'),('c','b')})
+          </code></pre>
+          <div class="pql" style="height:200px; width:300px;">
+!graph({('a','b'),('b','c'),('a','a'),('c','b')})
+          </div>
         </div>
       </div><!-- /#sheet -->
       <div id="footer_spacer"></div>
