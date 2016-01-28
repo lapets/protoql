@@ -124,6 +124,13 @@ graph({'a','b','c','d','e'}, {('a','b'),('b','c'),('a','a'),('c','b')})
           <div class="pql" style="height:200px; width:300px;">
 !graph({('a','b'),('b','c'),('a','a'),('c','b')})
           </div>
+          By using the <code>#</code> decorator, it is possible to create a diagram with a textbox allowing the user to edit the data from which the diagram is generated. Double-clicking any empty area in the diagram rebuilds the diagram using the data that currently appears in the textbox.
+          <pre><code class="html">
+#graph({('a','b'),('b','c'),('a','a'),('c','b')})
+          </code></pre>
+          <div class="pql" style="height:200px; width:300px;">
+#graph({('a','b'),('b','c'),('a','a'),('c','b')})
+          </div>
         </div>
       </div><!-- /#sheet -->
       <div id="footer_spacer"></div>
