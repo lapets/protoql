@@ -3,9 +3,42 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="../lib/protoql.js"></script>
+    <style>.pql { display:inline-block; width:600px; height:400px; }</style>
   </head>
-  <body onload="var pql = protoql.Visualization('example');">
-    <div id="example"></div>
+  <body onload="protoql.Visualizations($('.pql'));">
+    <div class="pql">
+table([
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`l`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"],       null],
+  [null,                           ["rr``incididunt`ut labore"],        null,                            ("dlll``a")],
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"),        ["r``consectetur`adipiscing`elit"], ["b"]]
+])
+    </div>
+    <div class="pql" style="background-color:lightblue; width:350px; height:350px;">
+table([
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
+  [null, ["dl``incididunt`ut labore"], null],
+  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
+])
+    </div>
+    <div class="pql">
+relation({('a','b'),('b','c'),('a','a'),('c','b')})
+    </div>
+    <div class="pql"  style="background-color:lightgreen; width:350px; height:350px;">
+relation({'a','b','c'}, {('a','b'),('b','c'),('a','a'),('c','b')})
+    </div>
+    <div class="pql">
+relation({'a','b','c'}, {'x','y'}, {('a','x'),('b','y'),('a','y')})
+    </div>
+    <div class="pql" style="background-color:lightyellow; width:200px; height:400px;">
+graph({'a','b','c','d','e'}, {('a','b'),('b','c'),('a','a'),('c','b')})
+    </div>
+    <div class="pql" style="background-color:lightyellow; width:200px; height:400px;">
+!graph({('a','b'),('b','c'),('a','a'),('c','b')})
+    </div>
+    <div class="pql">
+#relation({'a','b','c'}, {'x','y'}, {('a','x'),('b','y'),('a','y')})
+    </div>
   </body>
 </html>

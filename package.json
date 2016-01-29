@@ -1,6 +1,6 @@
 {
   "name": "protoql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Andrei Lapets",
     "email": "a@lapets.io"
@@ -20,7 +20,7 @@
     "graph",
     "rendering"
   ],
-  "license": "",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "main": "lib/protoql.js",
   "dependencies": {},
