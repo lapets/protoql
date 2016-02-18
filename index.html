@@ -74,9 +74,9 @@ npm install protoql
 &lt;body onload="protoql.Visualizations($('.pql'));"&gt;
   &lt;div class="pql"&gt;
 table([
-  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r:lorem``consectetur"), ["dl:tempor``sed do`eiusmod tempor"]],
   [null, ["dl``incididunt`ut labore"], null],
-  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
+  [("r:dolor``lorem`ipsum`dolor`sit amet"), ("r`uu``incididunt"), ["consectetur`adipiscing`elit"]]
 ])
   &lt;/div&gt;
 &lt;/body&gt;
@@ -84,9 +84,9 @@ table([
           The diagram above would render as shown below. 
           <div class="pql">
 table([
-  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r``consectetur`adipiscing`elit"), ["dl``sed do`eiusmod tempor"]],
+  [["dd`r``lorem`ipsum`dolor`sit amet"], ("s`r:lorem``consectetur"), ["dl:tempor``sed do`eiusmod tempor"]],
   [null, ["dl``incididunt`ut labore"], null],
-  [("r``lorem`ipsum`dolor`sit amet"), ("r``incididunt`ut labore"), ["consectetur`adipiscing`elit"]]
+  [("r:dolor``lorem`ipsum`dolor`sit amet"), ("r`uu``incididunt"), ["consectetur`adipiscing`elit"]]
 ])
           </div>
           The notation for tables being used above (inspired by the LaTeX <a href="https://tug.org/applications/Xy-pic/Xy-pic.html">xy</a> package) is as follows:
