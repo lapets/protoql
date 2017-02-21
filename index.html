@@ -10,7 +10,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="lib/protoql.js"></script>
     <style>
       html, body { height:100%; margin:0; color:#000000; font-family:'Open Sans',sans-serif; }
@@ -51,18 +51,18 @@
     <div id="content">
       <div id="title"><img src="protoql.png" alt="protoql"/></div>
       <div id="description">
-        A JavaScript library designed for rapid assembly, querying, and interactive visual rendering of diagrams and common abstract mathematical structures.
+        A library designed for rapid assembly, querying, and interactive visual rendering of diagrams and common abstract mathematical structures.
       </div>
       <div id="sheet">
         <div class="section"><h2>Purpose</h2>
-          This library makes it possible to easily introduce specific kinds of interactive graph diagrams into HTML documents. It depends primarily on <a href="http://d3js.org/">D3.js</a>; it also supports initialization of <a href="http://jquery.com">jQuery</a>-wrapped document elements as interactive diagrams.
+          This library makes it possible to easily introduce specific kinds of interactive graph diagrams into HTML documents. It depends primarily on <a href="https://d3js.org/">D3.js</a>; it also supports initialization of <a href="https://jquery.com">jQuery</a>-wrapped document elements as interactive diagrams.
         </div>
-        <div class="section"><h2>Repository and Package</h2>
-          The <a href="http://github.com/lapets/protoql">official repository</a> is maintained on GitHub. The package is also <a href="http://www.npmjs.com/package/protoql">available on npm</a>.
+        <div class="section"><h2>Repository and Packages</h2>
+          The <a href="https://github.com/lapets/protoql">official repository</a> is maintained on GitHub. The JavaScript package is also <a href="https://www.npmjs.com/package/protoql">available on npm</a> and the Python package is <a href="https://pypi.python.org/pypi/protoql">available on PyPI</a>.
           <pre><code>
 npm install protoql
+pip install protoql
           </code></pre>
-          The latest version of the library is also hosted at <a href="http://protoql.org/lib/protoql.js"><code>http://protoql.org/lib/protoql.js</code></a>, although we recommend maintaining a copy on your own server at this time.
         </div>
         <div class="section"><h2>Example</h2>
           Using the library is straightforward. Simply include a diagram description in document elements, and then apply the visualization constructor to those elements.
@@ -138,9 +138,11 @@ graph({'a','b','c','d','e'}, {('a','b'),('b','c'),('a','a'),('c','b')})
     </div><!-- /#content -->
     <div id="footer">
       <hr/>
-      <a href="http://www.npmjs.com/package/protoql">Package</a>
+      <a href="https://www.npmjs.com/package/protoql">npm</a>
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="http://www.github.com/lapets/protoql">Repository</a>
+      <a href="https://pypi.python.org/pypi/protoql">PyPI</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.github.com/lapets/protoql">Repository</a>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <a href="mailto:a@lapets.io">Contact</a>
     </div><!-- /#footer -->
