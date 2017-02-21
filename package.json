@@ -21,7 +21,7 @@
     "rendering"
   ],
   "license": "MIT",
-  "readmeFilename": "README.md",
+  "readmeFilename": "README",
   "main": "lib/protoql.js",
   "dependencies": {},
   "analyze": false,
