@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -38,7 +38,7 @@ graph({'a','b','c','d','e'}, {('a','b'),('b','c'),('a','a'),('c','b')})
 !graph({('a','b'),('b','c'),('a','a'),('c','b')})
     </div>
     <div class="pql">
-#relation({'a','b','c'}, {'x','y'}, {('a','x'),('b','y'),('a','y')})
+#relation({['a'],'b','c'}, {'x','y'}, {('a','x'),('b','y'),('a','y')})
     </div>
   </body>
 </html>
